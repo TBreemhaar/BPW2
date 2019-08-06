@@ -4,27 +4,53 @@ using UnityEngine;
 
 public class Player_Script : MonoBehaviour
 {
-    public static Player_Script instance;
+    public GameObject leftGhost;
+    public GameObject rightGhost;
+    public GameObject downGhost;
+    public GameObject upGhost;
 
-    void Awake()
+    private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
+        leftGhost.SetActive(true);
+        rightGhost.SetActive(false);
+        downGhost.SetActive(false);
+        upGhost.SetActive(false);
     }
 
-    //wanneer er iets met het bed collide, dan wordt deze methode aangeroepen. Deze collision is wat het bed heeft geraakt.
-    private void OnTriggerEnter2D(Collider2D collision) 
+    void Update()
     {
-        var enemy = collision.GetComponent<Enemy_Script>();
-        if(enemy != null)
+
+        // Code voor inputcheck
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Destroy(gameObject);
+            leftGhost.SetActive(true);
+            rightGhost.SetActive(false);
+            downGhost.SetActive(false);
+            upGhost.SetActive(false);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            leftGhost.SetActive(false);
+            rightGhost.SetActive(true);
+            downGhost.SetActive(false);
+            upGhost.SetActive(false);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            leftGhost.SetActive(false);
+            rightGhost.SetActive(false);
+            downGhost.SetActive(true);
+            upGhost.SetActive(false);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            leftGhost.SetActive(false);
+            rightGhost.SetActive(false);
+            downGhost.SetActive(false);
+            upGhost.SetActive(true);
         }
     }
 }

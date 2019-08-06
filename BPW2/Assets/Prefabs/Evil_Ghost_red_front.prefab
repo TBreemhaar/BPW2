@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 542157857055774383}
   - component: {fileID: 542157857055774382}
   - component: {fileID: 8239411996348878991}
+  - component: {fileID: 329676297069456390}
   m_Layer: 0
   m_Name: Evil_Ghost_red_front
   m_TagString: Untagged
@@ -58,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -121,4 +123,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 14.3}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
+--- !u!50 &329676297069456390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542157857055774377}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
