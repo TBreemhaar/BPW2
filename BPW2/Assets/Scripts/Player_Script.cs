@@ -11,9 +11,9 @@ public class Player_Script : MonoBehaviour
 
     private void Start()
     {
-        leftGhost.SetActive(true);
+        leftGhost.SetActive(false);
         rightGhost.SetActive(false);
-        downGhost.SetActive(false);
+        downGhost.SetActive(true);
         upGhost.SetActive(false);
     }
 
