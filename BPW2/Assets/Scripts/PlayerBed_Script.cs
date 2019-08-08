@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBed_Script : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerBed_Script : MonoBehaviour
         var enemy = collision.GetComponent<Enemy_Script>();
         if(enemy != null)
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             Destroy(enemy.gameObject);
             Destroy(gameObject);
         }
