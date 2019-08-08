@@ -10,6 +10,7 @@ public class Shield_Script : MonoBehaviour
         if (enemy != null)
         {
             Destroy(enemy.gameObject);
+            ScoreScript.scoreValue += 1;
         }
     }
 }

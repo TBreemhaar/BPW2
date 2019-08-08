@@ -26,8 +26,8 @@ public class PlayerBed_Script : MonoBehaviour
         if(enemy != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Destroy(enemy.gameObject);
-            Destroy(gameObject);
+            //Destroy(enemy.gameObject);
+            //Destroy(gameObject);
         }
     }
 }
