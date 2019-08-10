@@ -22,5 +22,4 @@ public class Enemy_Script : MonoBehaviour
         transform.Translate(Vector3.up * Time.deltaTime * speed);
         //transform.Translate(Vector3.forward * 5 * Time.deltaTime); //(om de enemy naar de target toe te laten bewegen)
     }
-
 }

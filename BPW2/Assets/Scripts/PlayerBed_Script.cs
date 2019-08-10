@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerBed_Script : MonoBehaviour
 {
     public static PlayerBed_Script instance;
+    private AsyncOperation asyncOperation;
 
     void Awake()
     {
@@ -19,13 +20,23 @@ public class PlayerBed_Script : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        asyncOperation.allowSceneActivation = false;
+    }
+
     //wanneer er iets met het bed collide, dan wordt deze methode aangeroepen. Deze collision is wat het bed heeft geraakt.
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         var enemy = collision.GetComponent<Enemy_Script>();
-        if(enemy != null)
+        if (enemy != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1f;
+            GameObject g = FindObjectOfType<DontDestroyOnLoad_Script>().gameObject;
+            Destroy(g);
+
+            asyncOperation.allowSceneActivation = true;
             //Destroy(enemy.gameObject);
             //Destroy(gameObject);
         }

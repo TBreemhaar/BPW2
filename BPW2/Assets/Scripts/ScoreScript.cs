@@ -13,7 +13,12 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         score = GetComponent<Text> (); //onze score (gameobject)
-        scoreValue = 0; //hierdoor reset de score elke keer als je de game opnieuw opstart
+        //scoreValue = 0; //hierdoor reset de score elke keer als je de game opnieuw opstart
+    }
+
+    public void ResetScore()
+    {
+        scoreValue = 0;
     }
 
     // Update is called once per frame
