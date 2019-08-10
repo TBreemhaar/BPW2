@@ -18,7 +18,6 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        //Hulp van Casey
         enemies.RemoveAll(e => e == null);
         if (enemies.Count == 0)
         {
