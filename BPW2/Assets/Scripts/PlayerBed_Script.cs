@@ -7,7 +7,8 @@ public class PlayerBed_Script : MonoBehaviour
 {
     public static PlayerBed_Script instance;
     private AsyncOperation asyncOperation;
-
+    [SerializeField]
+    private int levelIndex;
     void Awake()
     {
         if (instance == null)
@@ -22,7 +23,8 @@ public class PlayerBed_Script : MonoBehaviour
 
     private void Start()
     {
-        asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+
+        asyncOperation = SceneManager.LoadSceneAsync(levelIndex);
         asyncOperation.allowSceneActivation = false;
     }
 

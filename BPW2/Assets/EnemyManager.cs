@@ -21,7 +21,9 @@ public class EnemyManager : MonoBehaviour
         enemies.RemoveAll(e => e == null);
         if (enemies.Count == 0)
         {
-            Reload();
+            //Load new scene
+            
+            //Reload();
         }
     }
 

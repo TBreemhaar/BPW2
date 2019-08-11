@@ -19,38 +19,49 @@ public class Player_Script : MonoBehaviour
 
     void Update()
     {
-
         // Code voor inputcheck
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            leftGhost.SetActive(true);
+            SetDirection(true, false, false, false);
+            /*leftGhost.SetActive(true);
             rightGhost.SetActive(false);
             downGhost.SetActive(false);
-            upGhost.SetActive(false);
+            upGhost.SetActive(false);*/
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            leftGhost.SetActive(false);
-            rightGhost.SetActive(true);
-            downGhost.SetActive(false);
-            upGhost.SetActive(false);
+            SetDirection(false, true, false, false);
+            //leftGhost.SetActive(false);
+            //rightGhost.SetActive(true);
+            //downGhost.SetActive(false);
+            //upGhost.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            leftGhost.SetActive(false);
-            rightGhost.SetActive(false);
-            downGhost.SetActive(true);
-            upGhost.SetActive(false);
+            SetDirection(false, false, true, false);
+            //leftGhost.SetActive(false);
+            //rightGhost.SetActive(false);
+            //downGhost.SetActive(true);
+            //upGhost.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            leftGhost.SetActive(false);
-            rightGhost.SetActive(false);
-            downGhost.SetActive(false);
-            upGhost.SetActive(true);
+            SetDirection(false, false, false, true);
+            //leftGhost.SetActive(false);
+            //rightGhost.SetActive(false);
+            //downGhost.SetActive(false);
+            //upGhost.SetActive(true);
         }
+    }
+
+    private void SetDirection(bool left,bool right,bool down,bool up)
+    {
+        leftGhost.SetActive(left);
+        rightGhost.SetActive(right);
+        downGhost.SetActive(down);
+        upGhost.SetActive(up);
     }
 }

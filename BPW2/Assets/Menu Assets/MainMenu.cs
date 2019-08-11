@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //om de index van ons huidige level te krijgen
     }
 
+    
+
     //in deze functie laten we de game eindigen
     public void QuitGame ()
     {
